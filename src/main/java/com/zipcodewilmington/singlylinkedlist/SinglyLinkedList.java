@@ -128,7 +128,39 @@ public class SinglyLinkedList<T> {
         return singlyLinkedList;
     }
 
-    public void sort(T value){}
+    public SinglyLinkedList sort(SinglyLinkedList list){
+        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
+        Node node = new Node();
+        node.next = null;
+
+        Node n = list.head;
+        Node n1 = n.next;
+        if ((Integer)n.data > (Integer) n1.data)  {
+            singlyLinkedList.add(n.data);
+        }
+        else {
+            singlyLinkedList.add(n1.data);
+        }
+        Integer counter = list.size()-1;
+        while (counter > 0) {
+            n = n.next;
+            n1 = n.next;
+            if ((Integer)n.data > (Integer) n1.data)  {
+                singlyLinkedList.add(n.data);
+            }
+            else {
+                singlyLinkedList.add(n1.data);
+            }
+            counter--;
+        }
+
+        return singlyLinkedList;
+    }
+
+
+
+
+
     //optional
     public void reverse(T value){}
     public void slice(T value){}

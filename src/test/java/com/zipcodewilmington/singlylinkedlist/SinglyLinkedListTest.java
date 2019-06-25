@@ -136,15 +136,31 @@ public class SinglyLinkedListTest {
     }
     @Test
     public void copyTest1() {
+        singlyLinkedList.add(3);
         singlyLinkedList.add(1);
         singlyLinkedList.add(2);
-        singlyLinkedList.add(3);
-        singlyLinkedList.add(4);
+
+
 
         SinglyLinkedList test = new SinglyLinkedList();
         test = test.copy(singlyLinkedList);
-        Integer expected = 1;
+        Integer expected = 3;
         Integer actual = (Integer) test.get(0);
+
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void sort() {
+        singlyLinkedList.add(3);
+        singlyLinkedList.add(1);
+        singlyLinkedList.add(2);
+
+
+        SinglyLinkedList test = new SinglyLinkedList();
+        test = test.sort(singlyLinkedList);
+        Integer expected = 2;
+        Integer actual = (Integer) test.get(1);
 
         Assert.assertEquals(expected,actual);
     }
