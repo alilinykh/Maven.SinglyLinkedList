@@ -108,8 +108,24 @@ public class SinglyLinkedList<T> {
         }
     }
 
-    public List<T> copy(SinglyLinkedList list){
-        return null;
+    public SinglyLinkedList copy(SinglyLinkedList list){
+        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
+        Node node = new Node();
+        node.next = null;
+//        Node n = head;
+        if (list.head == null) {
+            singlyLinkedList.head = node;
+        }
+        else {
+            Node n = list.head;
+            singlyLinkedList.add(list.head.data);
+            while (n.next != null) {
+                n = n.next;
+                singlyLinkedList.add(n.data);
+            }
+        }
+
+        return singlyLinkedList;
     }
 
     public void sort(T value){}
